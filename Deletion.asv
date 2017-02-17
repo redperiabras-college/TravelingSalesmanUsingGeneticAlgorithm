@@ -27,25 +27,19 @@ function [ population, rejected ] = Deletion( population, offspring )
         %If the Fitness of the current chromosome is greater than the
         %   current fitness
         if(Fitness(population(chromosome,:)) > worst_fitness )
-            %Set as the new worst_fitness
+            %Set as the new worst
             worst_fitness = Fitness(population(chromosome,:));
-            %Get the index of the chromosome
             worst_chromosome_index = chromosome;
-            %Set as the new candidate for rejection
             rejected = population(chromosome,:);
         end
     end
-    
-    %If the worst fitness is not equal to the fitness of the offspring
+
     if(worst_fitness ~= Fitness(offspring))
-        %Insert the offspring to the population
         population(worst_chromosome_index,:) = offspring;
         fprintf('Status: Added');
     else
-        %Do nothing
         fprintf('Status: Rejected');
     end
-    
 end
 
 %*************************************************************************%

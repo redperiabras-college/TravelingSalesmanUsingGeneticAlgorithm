@@ -24,33 +24,25 @@ function [ evaluation, best_chromosome, worst_chromosome ] = Evaluate( populatio
 
     %Loop through the entire population
     for chromosome = 1:length(population)
-        %Compute for the summation of the fitness of all chromosomes
+        
         evaluation = evaluation + Fitness(population(chromosome,:));
     end
     
     %Loop through the entire population
     for chromosome = 1:length(population)
-        %Fitness of current chromosome is greater than the current worst
-        %   fitness score
         if(Fitness(population(chromosome,:)) > worst_fitness )
-            %Replace the current worst fitness score
             worst_fitness = Fitness(population(chromosome,:));
-            %Copy the worst chromosome
             worst_chromosome = population(chromosome,:);
         end
     end
     
     %Loop through the entire population
     for chromosome = 1:length(population)
-        %Fitness of current chromosome is less than the current best
         if(Fitness(population(chromosome,:)) < best_fitness)
-            %Replace the current best fitness score
             best_fitness = Fitness(population(chromosome,:));
-            %Copy the best chromosome
             best_chromosome = population(chromosome,:);
         end
     end
     
 end
 
-%*************************************************************************%

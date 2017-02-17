@@ -40,13 +40,12 @@ function [ child ] = Crossover( parent_1, parent_2 )
         end
     end
 
-    %Put in the dna from parent_1 in place
-    child(START_RANGE:END_RANGE) = parent_1;
+    %place the remaining dna from parent_1 in place
+    child(start_range:END_RANGE) = parent_1;
     
-    %Initial parent_2_dna index
     parent_2_dna = 1;
 
-    %Place the remaining dna from parent_2 in proper order
+    %place the remaining nonexisting dna from parent_2 in order
     for dna = 1:CHILD_DNA_SIZE
        if child(dna) == 0
            child(dna) = parent_2(parent_2_dna);
@@ -56,4 +55,3 @@ function [ child ] = Crossover( parent_1, parent_2 )
     
 end
 
-%*************************************************************************%

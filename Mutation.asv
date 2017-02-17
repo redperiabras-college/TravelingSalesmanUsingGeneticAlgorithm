@@ -1,33 +1,36 @@
 %*************************************************************************%
 %@BeginVerbatim 
-% Function: Initialize
-% Description: Create an initial population
-% Parameter(s): population_size, int
-% Filename: Initialize.m
+% Function: Mutation
+% Description: Modify the given chromosome
+% Parameter(s): chromosome, matrix
+% Filename: Mutation.m
 % Version: v00.02
 % Author: Group 1
 % Yr&Sec: 3-4
 % Subject: Computational Intelligence
-%@EndVerbatim 
+%@EndVebartim 
 %*************************************************************************%
 
 % Last Reviewed by: Periabras, 17 February 2017
 
 %@Code Body***************************************************************%
 
-function [ population ] = Initialize(population_size)
+function [ child ] = Mutation( child )
     %@Intialization*******************************************************%
-        DNA_SIZE = 10;  %represents 10 schools
-        population = zeros(population_size, 10);
+    DNA_SIZE = length(child);
     %*********************************************************************%
     
-    %Loop through the whole population size
-    for chromosome = 1:population_size  
-        %create a random sequence of numbers from 1 to the DNA_SIZE without
-        %   repeating the one number twice
-        population(chromosome,:) = randperm(DNA_SIZE, DNA_SIZE);
-    end
+    %Get 2 dna random points from the chromosome
+    [point_1, point_2] = randperm(, 2);
+
+    %Switch the 2 dna
+    temp = child(point_1);
+    child(point_1) = child(point_2);
+    child(point_2) = temp;
+
 end
+
+%*************************************************************************%
 
 %*************************************************************************%
 

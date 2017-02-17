@@ -19,21 +19,19 @@
 function [ ] = DisplayResult( best_chromosome )
     %@Intialization*******************************************************%
     SCHOOL_COORD = [[2,5];[0,8];[7,4];[1,9];[6,3];[5,0];[4,8];[2,6];[10,2];[4,9]]; %Coordinates of all the schools
-    SCHOOL_NAME = ['FEU     ';'CEU     ';'Adamson ';'UST     ';'TUP     ';'San Beda';'Arellano';'UE      ';'NU      ';'Mapua   '];  %Identification of the coordinates of the schools
-    x=[];   %all x coordinates
-    y=[];   %all y coordinates
-    z=[];   %names of the schools
+    SCHOOL_NAME = ['FEU     ';'CEU     ';'Adamson ';'UST     ';'TUP     ';'San Beda';'Arellano';'UE      ';'NU      ';'Mapua   '];  %Identification of the coor
+    x=[];
+    y=[];
+    z=[];
     %*********************************************************************%
         
-    %Put into order all x,y, and z according to the chromosome
     for dna = 1:length(best_chromosome)
-        dna_link = best_chromosome(dna);
-        x = cat(2,x,SCHOOL_COORD(dna_link,1));
-        y = cat(2,y,SCHOOL_COORD(dna_link,2));
-        z = vertcat(z,SCHOOL_NAME(dna_link,:));
+        data_link = best_chromosome(dna);
+        x = cat(2,x,SCHOOL_COORD(data_link,1));
+        y = cat(2,y,SCHOOL_COORD(data_link,2));
+        z = vertcat(z,SCHOOL_NAME(data_link,:));
     end
     
-    %Create Graph
     hold on;
     title(strcat('Route Distance:  ',num2str(Fitness(best_chromosome))));
     xlabel('x coordinates');
@@ -44,9 +42,5 @@ function [ ] = DisplayResult( best_chromosome )
     legend('Route');
     axis([-1 11 -1 10]);
     hold off;
-    
 end
-
-%*************************************************************************%
-
 
