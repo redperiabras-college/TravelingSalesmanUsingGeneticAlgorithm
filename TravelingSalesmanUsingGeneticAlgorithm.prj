@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.deploytool" plugin-version="1.0">
-  <configuration target="target.standalone" target-name="Console Application" name="TravelingSalesmanUsingGeneticAlgorithm" location="C:\Users\Red Periabras\Documents\MATLAB\Traveling Salesman - Genetic Algorithm" file="C:\Users\Red Periabras\Documents\MATLAB\Traveling Salesman - Genetic Algorithm\TravelingSalesmanUsingGeneticAlgorithm.prj" build-checksum="39848253">
+  <configuration target="target.standalone" target-name="Console Application" name="TravelingSalesmanUsingGeneticAlgorithm" location="C:\Users\Red Periabras\Documents\MATLAB\Traveling Salesman - Genetic Algorithm" file="C:\Users\Red Periabras\Documents\MATLAB\Traveling Salesman - Genetic Algorithm\TravelingSalesmanUsingGeneticAlgorithm.prj" build-checksum="1405022540">
     <param.project.name>C:\Users\Red Periabras\Documents\MATLAB\Traveling Salesman - Genetic Algorithm\TravelingSalesmanUsingGeneticAlgorithm.prj</param.project.name>
     <param.target.type>Console Application</param.target.type>
     <param.appname>TravelingSalesmanUsingGeneticAlgorithm</param.appname>
@@ -66,8 +66,10 @@
       <file>${PROJECT_ROOT}\DisplayResult.m</file>
       <file>${PROJECT_ROOT}\Evaluate.m</file>
       <file>${PROJECT_ROOT}\Fitness.m</file>
+      <file>${PROJECT_ROOT}\GraphEvaluation.m</file>
       <file>${PROJECT_ROOT}\Initialize.m</file>
       <file>${PROJECT_ROOT}\Mutation.m</file>
+      <file>${PROJECT_ROOT}\RunTS.m</file>
       <file>${PROJECT_ROOT}\Selection.m</file>
     </fileset.resources>
     <fileset.package>
